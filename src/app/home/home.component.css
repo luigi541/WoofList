@@ -1,0 +1,278 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #2b2b2b;
+  z-index: 1000; /* Garante que o header fique acima de outros elementos */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao header */
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu {
+  position: relative;
+}
+
+.hamburger-menu span {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 40px; /* Ajuste a altura do dropdown em relação ao span */
+  left: -50px; /* Esconde o menu à esquerda inicialmente */
+  width: 150px;
+  background-color: #bb8a21;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: left 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1001;
+}
+
+.hamburger-menu:hover .menu-dropdown {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 0px 15px 20px rgba(255, 255, 255, 0.4);
+}
+
+.menu-item {
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(125, 125, 125, 0.1);
+  transition: all 0.3s ease 0s;
+  margin: 10px 5px; /* Adicionar espaçamento entre os botões */
+  padding: 10px 20px;
+}
+
+.menu-item:hover {
+  background-color: #bb8a21;
+  box-shadow: 0px 15px 20px rgba(151, 151, 151, 0.4);
+  transform: translateY(-7px);
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Alinha a barra de busca à direita no header */
+  padding-right: 20px;
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.btn-outline-success {
+  background-color: #bb8a21;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.btn-outline-success:hover {
+  background-color: #8f671b;
+}
+
+.content {
+  margin-top: 60px; /* Ajusta a margem superior para não ficar sob o header */
+  padding: 20px;
+}
+.text {
+  margin-top: 30px;
+  text-align: center;
+}
+
+p {
+  padding-top: 30px;
+}
+/* Cards de Cães */
+.dogContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribui os cards na linha */
+  overflow: auto;
+  height: 100vh;
+  width: 100%;
+  gap: 16px;
+  padding-bottom: 200px;
+}
+
+.flip-Card {
+  width: calc(25% - 16px); /* 4 por linha */
+  padding: 16px;
+  text-align: center;
+  border-radius: 8px;
+  height: fit-content;
+}
+
+.flip-Card:hover {
+  transform: translateY(-5px);
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* proporção 1:1 */
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flip-Card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #f8f9fa;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-back {
+  background-color: #bb8a21;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.learn-more-link {
+  margin-top: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+.dogImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.img {
+  width: 100%;
+  height: 70%;
+}
+
+.btn-footer {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px; /* Defina a largura máxima desejada para os botões */
+  margin: 0 auto; /* Centraliza o contêiner de botões na página */
+}
+
+.btn-footer .showMoreBtn {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  background-color: #bb8a21;
+  color: white;
+  font-size: 16px;
+
+  font-weight: 500;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(125, 125, 125, 0.1);
+  transition: all 0.3s ease 0s;
+  margin: 10px 5px; /* Adicionar espaçamento entre os botões */
+  padding: 10px 20px;
+}
+
+/* Estilização do Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #fff;
+  color: #706e6e;
+  z-index: 1000;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao footer */
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .flip-Card {
+    width: calc(50% - 16px); /* 2 por linha */
+    padding: 16px;
+    text-align: center;
+    border-radius: 8px;
+  }
+}
+
+/* Media query para telas pequenas (menor que 768px) */
+@media screen and (max-width: 767px) {
+  .flip-Card {
+    width: calc(100% - 16px); /* 1 por linha */
+    padding: 16px;
+    text-align: center;
+    border-radius: 8px;
+  }
+}

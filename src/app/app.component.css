@@ -1,0 +1,7 @@
+h2 {
+  color: #fff;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+}

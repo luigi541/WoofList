@@ -1,0 +1,114 @@
+/* Estilos principais da "card" */
+.card {
+  position: relative;
+  width: 300px; 
+    height: 700px;
+  padding: 40px;
+  border-radius: 14px;
+  z-index: 2;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  background-color: #ffffff;
+  margin: auto; /* Centraliza o formulário horizontalmente */
+}
+
+/* Fundo desfocado e brilhante */
+.bg {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  border-radius: 10px;
+  overflow: hidden;
+  outline: 2px solid white;
+}
+
+/* Animação do blob */
+.blob {
+  position: absolute;
+  z-index: 0;
+  top: -25%;
+  left: -25%;
+  width: 150%;
+  height: 150%;
+  border-radius: 50%;
+  background-color: #BB8A21;
+  opacity: 1;
+  filter: blur(50px);
+  animation: blob-bounce 10s infinite ease-in-out;
+}
+
+@keyframes blob-bounce {
+  0% {
+    transform: translate(-25%, -25%);
+  }
+  25% {
+    transform: translate(25%, -25%);
+  }
+  50% {
+    transform: translate(25%, 25%);
+  }
+  75% {
+    transform: translate(-25%, 25%);
+  }
+  100% {
+    transform: translate(-25%, -25%);
+  }
+}
+
+/* Estilos dos elementos do formulário */
+.card-title,
+.form-label,
+.form-control,
+.btn {
+  z-index: 3;
+  position: relative;
+  margin-bottom: 10px; /* Espaçamento entre elementos */
+}
+
+/* Estilos dos botões */
+button {
+  font-size: 14px; /* Fonte ajustada para melhor legibilidade */
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(125, 125, 125, 0.1);
+  transition: all 0.3s ease 0s;
+  margin-top: 10px; /* Espaçamento superior para separação dos botões */
+  padding: 10px 20px; /* Aumenta o tamanho do botão */
+}
+
+button:hover {
+  background-color: #BB8A21;
+  box-shadow: 0px 15px 20px rgba(151, 151, 151, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+
+/* Ajustes adicionais */
+.form-inline {
+  display: flex;
+  gap: 10px; /* Espaçamento entre os elementos do formulário */
+}
+
+.w-50 {
+  width: 100%; /* Garante que a largura seja 100% do container */
+}
+
+.w-25 {
+  width: 45%; /* Ajuste para evitar que os botões se sobreponham */
+  margin: 5px; /* Espaçamento entre os botões */
+}
+

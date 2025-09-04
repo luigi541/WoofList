@@ -1,0 +1,31 @@
+<div class="header">
+  <div class="menu-container">
+    <div class="hamburger-menu">
+      <span>☰</span>
+      <div class="menu-dropdown">
+        <button class="menu-item" (click)="goBack()">Home</button>
+        <button class="menu-item" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="favorites-container" *ngIf="dogs.length > 0">
+  <div class="dog-details" *ngFor="let dog of dogs">
+    <div class="dog-image-container">
+      <img class="dog-image" [src]="dog.image.url" alt="{{ dog.name }}" />
+    </div>
+    <div class="dog-info-container">
+      <h2>{{ dog.name }}</h2>
+      <a class="learn-more-link" [routerLink]="['/details', dog.id]"
+        >Learn more</a
+      >
+    </div>
+  </div>
+</div>
+<div *ngIf="dogs.length === 0">
+  <p>No dogs found.</p>
+</div>
+<div class="goBack-container">
+  <button class="btn btn-primary back-button" (click)="goBack()">Back</button>
+</div>

@@ -1,0 +1,78 @@
+<div class="header">
+  <!--container menu-->
+  <div class="menu-container">
+    <div class="hamburger-menu">
+      <span>☰</span>
+      <div class="menu-dropdown">
+        <button class="menu-item" (click)="favorites()">Favorites</button>
+        <button class="menu-item" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="searchContainer">
+    <div class="form-inline">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        [(ngModel)]="searchInput"
+        (keyup.enter)="search()"
+      />
+
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        type="submit"
+        (click)="search()"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="text">
+  <h1>Wellcome to the world of Dogs</h1>
+</div>
+
+<div class="dogContainer" *ngIf="dogs.length > 0">
+  <div class="flip-Card" *ngFor="let dog of dogs">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <div class="img">
+          <img class="dogImage" [src]="dog.image.url" alt="{{ dog.name }}" />
+        </div>
+        <P>{{ dog.name }}</P>
+      </div>
+      <div class="flip-card-back">
+        <p>Details about {{ dog.name }}</p>
+        <!--Link para página details-->
+        <a class="learn-more-link" [routerLink]="['/details', dog.id]"
+          >learn more</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="dogs.length === 0">
+  <p>No dogs found.</p>
+</div>
+<div class="btn-footer">
+  <div *ngIf="showMoreBtn" class="showMoreBtn">
+    <button type="button" class="btn" (click)="showMore()">Show more</button>
+  </div>
+  <div *ngIf="showMoreSearchResults" class="showMoreBtn">
+    <button type="button" class="btn" (click)="showMoreSearch()">
+      Show more
+    </button>
+  </div>
+  <div *ngIf="scrollTop">
+    <!--botão para voltar ao topo-->
+    <button type="button" class="btn" (click)="scrollToTop()">Go to top</button>
+  </div>
+</div>
+
+<div class="footer">
+  <p>&copy; 2024 DMPW2</p>
+</div>

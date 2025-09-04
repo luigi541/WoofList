@@ -1,0 +1,60 @@
+<div class="details-container">
+  <div class="header">
+    <div class="menu-container">
+      <div class="hamburger-menu">
+        <span>☰</span>
+        <div class="menu-dropdown">
+          <button class="menu-item" (click)="xpto()">Favoritos</button>
+          <button class="menu-item" (click)="logout()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dog-details">
+    <div class="image-container">
+      <img
+        class="dog-image"
+        [src]="dog?.image?.url"
+        alt="Imagem de {{ dog?.name }}"
+      />
+    </div>
+
+    <div class="info-container">
+      <h2>
+        <b>{{ dog?.name }}</b>
+      </h2>
+
+      <p class="information">
+        The {{ dog?.name }} is a {{ dog?.bred_for }} dog, with a
+        {{ dog?.life_span }} life span. <br />
+        These dogs are often {{ dog?.temperament }}.
+      </p>
+
+      <p *ngIf="dog?.origin?.length" class="origin">
+        <b>Origin:</b> {{ dog?.origin }}
+      </p>
+
+      <p *ngIf="dog?.relatedIds?.length" class="information">
+        <b>Related IDs:</b> {{ dog?.relatedIds }}
+      </p>
+
+      <div class="favorite-section">
+        <b *ngIf="hasLike">Remove from favorite</b>
+        <b *ngIf="!hasLike">Add to favorite</b>
+        <div class="heart-icon" (click)="onHeartClick()">
+          <fa-icon
+            class="blueHeart"
+            *ngIf="hasLike"
+            [icon]="faSolidHeart"
+          ></fa-icon>
+          <fa-icon *ngIf="!hasLike" [icon]="faOutlinedHeart"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary back-button" (click)="home()">Back</button>
+  <div class="footer">
+    <p>&copy; 2024 DMPW2</p>
+  </div>
+</div>

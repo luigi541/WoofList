@@ -1,0 +1,146 @@
+/* Estilos Globais */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  width: 100%;
+  max-width: 1200px; /* Limita a largura máxima */
+  margin: auto; /* Centraliza o contêiner na página */
+}
+
+/* Dog Details */
+.dog-details {
+  display: flex;
+  flex-direction: column; /* Muda para coluna em telas menores */
+  gap: 20px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+}
+
+.image-container {
+  flex: 1;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.dog-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.info-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.info-container h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.information,
+.origin {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #6c757d;
+}
+
+.favorite-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: #6c757d;
+}
+
+.heart-icon {
+  cursor: pointer;
+}
+.blueHeart {
+  color: #ff3040;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #fff;
+  color: #414141;
+  z-index: 1000;
+}
+
+/* Media Queries para Responsividade */
+@media (min-width: 600px) {
+  .dog-details {
+    flex-direction: row; /* Altera para linha em telas maiores */
+    height: auto; /* Permite ajuste dinâmico da altura */
+  }
+
+  .image-container {
+    width: 50%; /* Ajuste a largura da imagem */
+    height: auto;
+  }
+
+  .info-container {
+    width: 50%; /* Ajuste a largura das informações */
+  }
+}
+
+@media (max-width: 599px) {
+  .details-container {
+    padding-top: 60px; /* Reduz o padding em telas menores */
+  }
+
+  .dog-details {
+    flex-direction: column; /* Muda para coluna em telas menores */
+    width: 90%; /* Reduz a largura em telas menores */
+    padding: 10px; /* Reduz o padding */
+  }
+
+  .image-container {
+    width: 100%;
+    max-width: none; /* Remove a limitação de largura */
+  }
+
+  .info-container {
+    width: 100%;
+  }
+
+  .header {
+    padding: 5px 10px; /* Reduz o padding do cabeçalho */
+  }
+
+  .hamburger-menu span {
+    font-size: 20px; /* Ajusta o tamanho do ícone do menu */
+  }
+
+  .menu-item {
+    font-size: 10px; /* Reduz o tamanho do texto dos itens de menu */
+    padding: 8px 15px; /* Ajusta o padding dos botões */
+  }
+
+  .footer {
+    padding: 5px; /* Reduz o padding do rodapé */
+  }
+}
