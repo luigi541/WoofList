@@ -1,27 +1,32 @@
-# Trabalho
+# Wooflist 🐶
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+Wooflist is a simple Angular app where you can search for dog breeds, view details, and add them to your favorites.  
+It was my first project built with Angular and uses **JSON Server** to simulate a REST API for the data.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Features
+- 🔍 Search for different dog breeds  
+- 🐾 View breed details  
+- ❤️ Add/remove favorites  
+- ⚡ Simulated REST API with JSON Server  
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠️ Tech Stack
+- **Angular** – Frontend framework  
+- **JSON Server** – Fake REST API for development  
+- **TypeScript**, **HTML**, **SCSS**, **Bootstrap**
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ✅ Prerequisites
+- Node.js 18+ and npm
+- Angular CLI
+  
+##▶️ How to Run
+1- Start JSON Server
+npx json-server db.json
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2- Start Angular app
+ng serve
