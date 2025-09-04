@@ -25,8 +25,10 @@ It was my first project built with Angular and uses **JSON Server** to simulate 
 - Angular CLI
   
 ##▶️ How to Run
-1- Start JSON Server
-npx json-server db.json
+-1- Start JSON Server
+-npx json-server db.json
 
-2- Start Angular app
-ng serve
+-2- Start Angular app
+-ng serve
+
+---
