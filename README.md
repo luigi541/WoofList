@@ -24,7 +24,7 @@ It was my first project built with Angular and uses **JSON Server** to simulate 
 - Node.js 18+ and npm
 - Angular CLI
   
-##▶️ How to Run
+## ▶️ How to Run
 -1- Start JSON Server
 -npx json-server db.json
 
